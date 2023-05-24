@@ -21,7 +21,7 @@ function App() {
   };
   return (
     <div>
-      <SchemaPropertiesForm buildSchema={buildSchema} />
+      <SchemaPropertiesForm buildSchema={buildSchema} savedSchemas={[...ajvSchemas]}/>
       <textarea
         rows={45}
         cols={100}
