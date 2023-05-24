@@ -29,6 +29,8 @@ function SchemaPropertiesForm({buildSchema}) {
       setSchemaName(evt.target.value);
   }
   const handleSaveProperties=()=>{
+      setProperties([]);
+      setSchemaName('')
       buildSchema(schemaName,properties)
   }
 
@@ -37,7 +39,6 @@ function SchemaPropertiesForm({buildSchema}) {
     const property = Object.keys(p)[0];
     return <li key={i}>{property}:{p[property].type} <button onClick={()=>handlePropertyDelete(i)}>X</button></li>;
   });
-  console.log(properties);
   return (
     <div>
       <form onSubmit={handlePropertyAddition}>
